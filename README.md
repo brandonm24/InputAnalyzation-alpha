@@ -1,0 +1,3 @@
+# InputAnalyzation-alpha
+A requirement I have on a project that I am working on is that the software be aware of input given in any form (numeric, string, array, matrix, ... etc.) and do some possible pattern/algorithmic analysis on it if possible. That being said, my idea is to create  a variety of different Python modules that will interpret said input and ultimately form the "eyes" for my project. Branch is unstable, but will continued to be worked on until a stable beta branch can be created. If you use my work, please site me (Thanks!)
+Go to the directory you save these files in and type "make" (without quotes) to run the main.py python module, which is where all additional modules will be called through.
