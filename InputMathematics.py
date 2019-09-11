@@ -66,3 +66,38 @@ def NumericMatrixComparison(inputMatrix1, inputMatrix2, comparisonCode=0):
         return 2
     elif(tempARR1[comparisonCode] == tempARR2[comparisonCode]):
         return 0
+
+
+def checkForBinaryList(inputList):
+    tempOutput = 0
+    for number in inputList:
+        if number > 1:
+            tempOutput = 0
+            break
+        else:
+            tempOutput = 1
+    return tempOutput
+
+
+
+def checkForBinaryMatrix(inputMatrix):
+    tempOutput = 0
+    for row in inputMatrix:
+        for number in row:
+            if number > 1:
+                tempOutput = 0
+                break
+            else:
+                tempOutput = 1
+    return tempOutput
+
+def getMatrixSize(inputMatrix):
+    matrixLength = 0
+    matrixMaxWidth = 0
+    for row in inputMatrix:
+        matrixLength += 1
+        if(matrixMaxWidth == 0):
+            matrixMaxWidth = len(row)
+        if(len(row) > matrixMaxWidth):
+            matrixMaxWidth = len(row)
+    return [matrixLength, matrixMaxWidth]

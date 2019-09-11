@@ -1,10 +1,10 @@
-main: InputAnalyzePy InputMathematicsPy mainPy
+main: InputAnalyzePy InputMathematicsPy AnalyzePy
 
 InputAnalyzePy: InputAnalyze.py
-	python InputAnalyze.py
+	python -m py_compile InputAnalyze.py
 
-mainPy: main.py
-	python main.py
+AnalyzePy: analyze.py
+	python -m py_compile analyze.py
 
 InputMathematicsPy: InputMathematics.py
-	python InputMathematics.py
+	python -m py_compile InputMathematics.py
