@@ -1,13 +1,15 @@
 import importlib
 import InputMathematics
+import InputOrientation
 from InputMathematics import getMatrixSize
 from InputMathematics import checkForBinaryList
 from InputMathematics import checkForBinaryMatrix
+from InputOrientation import parseInput
+from InputOrientation import strToMatrixOrList
 import numpy as numpy
 import re
 from PyDictionary import PyDictionary
 
-from ast import literal_eval
 
 def analyzeInput(inputData = "NOINPUT"):
     tempInput = str(inputData)
@@ -199,39 +201,4 @@ def checkForWordPartOfSpeech(word, key, dictionary = PyDictionary()):
             return 0
     else:
         return 0
-
-def numpyARRClean(numpyARR):
-    return numpyARR.replace("\n ",", ")
-
-def parseInput(inputData="NOINPUT"):
-    if inputData.startswith('[') and inputData.endswith(']'):
-        #return map(type(inputData.strip('[]').split(',')[0]), inputData.strip('[]').split(','))
-        return strToMatrixOrList(inputData)
-    else:
-        if inputData.isdigit():
-            return int(inputData)
-        elif inputData.count('.') is 1:
-            return float(inputData)
-        else:
-            return inputData
-
-def strToMatrixOrList(inputData="NOINPUT"):
-    if inputData.startswith('[') and inputData.endswith(']'):
-        if inputData.count('[') > 1 and inputData.count(']') > 1:
-            #return [strToMatrixOrList(item) for item in inputData.split(",")]
-            return inputData.strip('[]').split(' ')
-        elif inputData.count('[') is 1 and inputData.count(']') and 1:
-            if inputData.strip('[]').split(',')[0].isdigit():
-                return [int(s) for s in inputData.strip('[]').split(',')]
-            elif inputData.strip('[]').split(',')[0].count('.') is 1:
-                return [float(s) for s in inputData.strip('[]').split(',')]
-            else:
-                return inputData.strip('[]').split(',')
-    else:
-        if type(inputData) is int:
-            return int(inputData)
-        elif type(inputData) is float:
-            return float(inputData)
-        else:
-            return inputData
     
